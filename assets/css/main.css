@@ -123,6 +123,12 @@ ARTICLE {
     line-height: 1.5em;
 }
 
+ARTICLE IMG {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 .page-nav {
 /*    margin: 1pc auto 1pc auto;*/
     text-indent: 0;
