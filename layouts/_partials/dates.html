@@ -1,0 +1,25 @@
+        <p><span class="meta-key">Published</span> <span class="meta-value">{{ .Date | time.Format ":date_full"}} 
+
+{{/* Check if Lastmod is set and is at least 60 seconds after the publish Date */}}
+{{ if and .Lastmod (gt (sub .Lastmod.Unix .Date.Unix) 59) }}
+  {{/* --- Time Difference Logic --- */}}
+  {{ $diffSeconds := sub .Lastmod.Unix .Date.Unix }}
+  {{ $timeValue := "" }}
+  {{ $timeUnitKey := "" }}
+
+  {{ if ge $diffSeconds 604800 }}         {{/* 1. More than a week (7*24*60*60) */}}
+    {{ $timeValue = div $diffSeconds 604800 }}
+    {{ $timeUnitKey = "updatedWeek" }}
+  {{ else if ge $diffSeconds 86400 }}    {{/* 2. More than a day (24*60*60) */}}
+    {{ $timeValue = div $diffSeconds 86400 }}
+    {{ $timeUnitKey = "updatedDay" }}
+  {{ else if ge $diffSeconds 3600 }}     {{/* 3. More than an hour (60*60) */}}
+    {{ $timeValue = div $diffSeconds 3600 }}
+    {{ $timeUnitKey = "updatedHour" }}
+  {{ else }}                              {{/* 4. More than a minute */}}
+    {{ $timeValue = div $diffSeconds 60 }}
+    {{ $timeUnitKey = "updatedMinute" }}
+  {{ end }}
+  {{/* --- End Time Difference Logic --- */}}
+        <p><span class="meta-key">Updated</span> <span class="meta-value">{{ T $timeUnitKey $timeValue }} later</span></p>
+  {{ end }}

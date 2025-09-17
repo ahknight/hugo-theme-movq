@@ -1,0 +1,17 @@
+# File: i18n/en.toml
+
+[updatedMinute]
+one = "{{.Count}} minute"
+other = "{{.Count}} minutes"
+
+[updatedHour]
+one = "{{.Count}} hour"
+other = "{{.Count}} hours"
+
+[updatedDay]
+one = "{{.Count}} day"
+other = "{{.Count}} days"
+
+[updatedWeek]
+one = "{{.Count}} week"
+other = "{{.Count}} weeks"

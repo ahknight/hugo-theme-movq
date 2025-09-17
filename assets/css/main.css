@@ -1,0 +1,355 @@
+/* 
+body {
+  color: #222;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  max-width: 768px;
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,400italic,700italic,300,400,700);
+
+/** { border: 1px solid red; }*/
+
+BODY {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-size: 12pt/1.5;
+    font-weight: 300;
+}
+
+HEADER, FOOTER, H1, H2, H3, H4, H5, H6 {
+    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-size: 12pt/1.5;
+}
+
+BODY > HEADER, BODY > FOOTER {
+    padding: 1em;
+}
+BODY > HEADER {
+    text-align: center;
+    padding: 6pc;
+}
+BODY > HEADER H1, BODY HEADER H2 {
+/*    color: #eee; */
+    margin-bottom: 0.3em;
+    font-family: Georgia, Times, serif;
+    font-weight: normal;
+}
+BODY > HEADER H1 {
+    font-size: 60pt;
+}
+BODY > HEADER H2 {
+    font-size: 14pt;
+    font-variant: small-caps;
+}
+BODY > HEADER P {
+    margin-bottom: 0.3em;
+}
+
+BODY > HEADER P {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+@media only screen and (max-width: 550px) {
+BODY {
+    padding: 0 1pc;
+}
+BODY > HEADER {
+    padding: 2pc;
+}
+BODY > HEADER H1 {
+    font-size: 30pt;
+}
+BODY > HEADER H2 {
+    font-size: 12pt;
+    font-variant: small-caps;
+}
+}
+
+BODY > *, BODY > HEADER *, BODY > FOOTER * {
+    max-width:650px;
+    margin:0 auto 0 auto;
+}
+
+BODY > HEADER, BODY > FOOTER {
+    max-width: 100%;
+    margin: 0;
+}
+
+BODY > HEADER + ARTICLE {
+    border-top: 1pt solid #ddd;
+    padding-top: 2pc;
+}
+
+BODY > FOOTER {
+    font-size: 11pt;
+    line-height: 1.4em;
+}
+BODY > FOOTER P {
+    margin-bottom: 1em;
+}
+
+ARTICLE HEADER {
+    font-weight: 700;
+    padding: 1pc 0 1pc 0;
+    margin: 0;
+    width:100%;
+}
+ARTICLE HEADER P {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+ARTICLE HEADER P TIME {
+    color:#2892ee;
+    font-size:1.4em;
+}
+ARTICLE HEADER H1 {
+    font-size:1.5em;
+    margin-bottom:0em;
+}
+ARTICLE HEADER H1 A:link, HEADER H1 A:link {
+    text-decoration: none;
+    color: black;
+}
+ARTICLE HEADER H1 A:visited, HEADER H1 A:visited {
+    text-decoration: underline;
+    color: black;
+}
+
+ARTICLE {
+    margin-bottom: 1pc;
+}
+
+ARTICLE {
+    font-weight: 400;
+    padding-bottom:2pc;
+    text-indent: 1pc;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.page-nav {
+/*    margin: 1pc auto 1pc auto;*/
+    text-indent: 0;
+}
+.page-nav-item {
+    display: inline-block;
+}
+.page-nav-item + .page-nav-item {
+    float: right;
+}
+
+ARTICLE FOOTER {
+    border-top: 1pt solid #ddd;
+    border-bottom: 1pt solid #ddd;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+ARTICLE FOOTER P {
+    margin: 0;
+}
+
+FOOTER .meta-key {
+    font-weight: 700;
+    text-align: right;
+    float: left;
+    min-width: 100px;
+}
+
+FOOTER .meta-value {
+    font-weight: 300;
+}
+
+.article-license {
+    clear: both;
+    padding: 2pc 1pc 2pc 1pc;
+}
+.article-license [property="dct:title"] {
+    font-style: italic;
+}
+
+ul.posts {
+    list-style: none;
+}
+li.post .date {
+    color: silver;
+    list-style: none;
+}
+li.post A {
+    color: #2892ee;
+}
+
+SECTION.comments {
+    margin-top: 3em;
+}
+SECTION.comments FORM P {
+    margin: 0 0 1em 0;
+}
+SECTION.comments FORM LABEL {
+    display: block;
+    float: left;
+    min-width: 100px;
+    text-align: right;
+    padding-right: 1em;
+}
+SECTION.comments FORM INPUT, SECTION.comments FORM TEXTAREA {
+    min-width: 200px;
+}
+SECTION.comments .comment {
+    border: 1pt solid #ddd;
+    padding: 1pc;
+    margin: 1pc;
+}
+SECTION.comments .comment .title {
+    font-weight: 800;
+}
+
+A:link {
+    color: #2892ee;
+}
+
+A:visited {
+    color: #b0beca;
+}
+
+H1, H2, H3, H4, H5, H6 {
+  color:#222;
+  margin-top:0;
+  margin-bottom:2em;
+}
+
+UL, OL, TABLE, PRE, DL {
+    margin-top:0;
+    margin-bottom:2em;
+}
+
+P {
+    line-height: 1.5em;
+}
+
+H1, H2, H3 {
+    line-height:1.1;
+}
+
+H1 {
+    font-size:28px;
+}
+
+H2 {
+    color:#393939;
+}
+
+H3, H4, H5, H6 {
+    color:#494949;
+}
+
+BLOCKQUOTE {
+    border-left: 1pt solid #e5e5e5;
+    margin: 1em;
+    padding-left: 1em;
+    font-style: italic;
+}
+
+CODE, PRE {
+    font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+    color:#333;
+    font-size:10pt;
+    text-indent: 0;
+}
+
+PRE {
+  padding:8px 15px;
+  background: #f8f8f8;  
+  border-radius:5px;
+  border:1px solid #e5e5e5;
+  overflow-x: auto;
+}
+
+TABLE {
+  width:100%;
+  border-collapse:collapse;
+}
+
+TH, TD {
+  text-align:left;
+  padding:5px 10px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+DT {
+  color:#444;
+  font-weight:700;
+}
+
+TH {
+  color:#444;
+}
+
+IMG {
+  max-width:100%;
+}
+
+B, STRONG {
+  font-weight:700;
+}
+
+SMALL {
+  font-size:10pt;
+}
+
+HR {
+  border:0;
+  background:#e5e5e5;
+  height:1pt;
+  margin-top:0;
+  margin-bottom:10pt;
+}
+
+.pager {
+    padding: 0.5em;
+    background-color: #eee;
+    text-align: center;
+}
+.paginator {
+    padding: .25em .25em .6em .25em;
+}
+.paginate-pages {
+    padding: 2px 3px;
+    display: none;
+}
+.paginate-first, .paginate-last {
+    padding: 2px 6px;
+    font-weight: bold;
+}
+.paginate-previous, .paginate-next {
+    padding: 2px 3px;
+}
+.paginate-link {
+    padding: 2px 4px;
+}
+.paginate-current {
+    padding: 2px 4px;
+    font-weight: bold;
+    color: black;
+}
