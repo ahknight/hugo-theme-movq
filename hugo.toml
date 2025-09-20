@@ -2,6 +2,10 @@ baseURL = 'https://example.org/'
 languageCode = 'en-US'
 title = 'My New Hugo Site'
 
+# Pagination configuration
+paginate = 10
+paginatePath = "page"
+
 [menus]
   [[menus.main]]
     name = 'Home'
@@ -22,3 +26,16 @@ title = 'My New Hugo Site'
   [module.hugoVersion]
     extended = false
     min = '0.146.0'
+
+[params]
+  [params.dateFormats]
+    # Machine-readable date format for datetime attributes
+    machine = "2006-01-02T15:04:05-07:00"
+    # Human-readable date format for article listings and headers
+    human = ":date_long"
+    # Full date format for publish dates
+    published = ":date_full"
+
+  [params.relatedPosts]
+    # Maximum number of related posts to show
+    limit = 5

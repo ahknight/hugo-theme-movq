@@ -151,15 +151,24 @@ ARTICLE FOOTER P {
     margin: 0;
 }
 
+FOOTER P {
+    display: flex;
+    align-items: flex-start;
+}
+
 FOOTER .meta-key {
     font-weight: 700;
     text-align: right;
-    float: left;
-    min-width: 100px;
+    width: 70pt;
+    flex-shrink: 0;
+/*     margin-right: 1em; */
 }
 
 FOOTER .meta-value {
     font-weight: 300;
+    flex: 1;
+    text-indent: 0;
+    margin-left: 1pc;
 }
 
 .article-license {
@@ -309,7 +318,7 @@ HR {
 
 .pager {
     padding: 0.5em;
-    background-color: #eee;
+/*     background-color: #eee; */
     text-align: center;
 }
 .paginator {
@@ -317,7 +326,7 @@ HR {
 }
 .paginate-pages {
     padding: 2px 3px;
-    display: none;
+/*     display: none; */
 }
 .paginate-first, .paginate-last {
     padding: 2px 6px;

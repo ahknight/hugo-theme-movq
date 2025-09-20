@@ -1,6 +1,6 @@
 {{ define "main" }}
-{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-{{ $dateHuman := .Date | time.Format ":date_long" }}
+{{ $dateMachine := .Date | time.Format (site.Params.dateFormats.machine | default "2006-01-02T15:04:05-07:00") }}
+{{ $dateHuman := .Date | time.Format (site.Params.dateFormats.human | default ":date_long") }}
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         <p>
@@ -15,6 +15,7 @@
     <footer>
         {{ partial "dates.html" . }}
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        {{ partial "related.html" . }}
         {{ with .PrevInSection }}<p><span class="meta-key">&larr;</span> <span class="meta-value"> <a rel="prev" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></span></p>{{ end }}
         {{ with .NextInSection }}<p><span class="meta-key">&rarr;</span> <span class="meta-value"> <a rel="next" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></span></p>{{ end }}
     </footer>

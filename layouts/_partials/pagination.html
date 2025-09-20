@@ -1,0 +1,47 @@
+{{- $paginator := .Paginator }}
+{{- if gt $paginator.TotalPages 1 }}
+<div class="pager">
+  <div class="paginator">
+    {{- with $paginator.First }}
+      {{- if ne $paginator.PageNumber 1 }}
+        <a href="{{ .URL }}" class="paginate-first" aria-label="First">{{ i18n "pagination_first" | default "First" }}</a>
+      {{- end }}
+    {{- end }}
+
+    {{- with $paginator.Prev }}
+      <a href="{{ .URL }}" class="paginate-previous" aria-label="Previous">{{ i18n "pagination_prev" | default "‹ Previous" }}</a>
+    {{- end }}
+
+    {{- $ellipsisNeeded := false }}
+    {{- range $paginator.Pagers }}
+      {{- $currentPageNumber := $paginator.PageNumber }}
+      {{- $distance := sub .PageNumber $currentPageNumber | math.Abs }}
+
+      {{- if or (eq .PageNumber 1) (eq .PageNumber $paginator.TotalPages) (le $distance 2) }}
+        {{- if and $ellipsisNeeded (gt $distance 2) }}
+          <span class="paginate-pages">…</span>
+          {{- $ellipsisNeeded = false }}
+        {{- end }}
+
+        {{- if eq .PageNumber $currentPageNumber }}
+          <span class="paginate-current" aria-current="page">{{ .PageNumber }}</span>
+        {{- else }}
+          <a href="{{ .URL }}" class="paginate-link" aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</a>
+        {{- end }}
+      {{- else }}
+        {{- $ellipsisNeeded = true }}
+      {{- end }}
+    {{- end }}
+
+    {{- with $paginator.Next }}
+      <a href="{{ .URL }}" class="paginate-next" aria-label="Next">{{ i18n "pagination_next" | default "Next ›" }}</a>
+    {{- end }}
+
+    {{- with $paginator.Last }}
+      {{- if ne $paginator.PageNumber $paginator.TotalPages }}
+        <a href="{{ .URL }}" class="paginate-last" aria-label="Last">{{ i18n "pagination_last" | default "Last" }}</a>
+      {{- end }}
+    {{- end }}
+  </div>
+</div>
+{{- end }}

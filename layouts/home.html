@@ -1,6 +1,8 @@
 {{ define "main" }}
   {{ .Content }}
-  {{ range site.RegularPages }}
+  {{ $paginator := .Paginate site.RegularPages }}
+  {{ range $paginator.Pages }}
     {{ partial "summary.html" . }}
   {{ end }}
+  {{ partial "pagination.html" . }}
 {{ end }}
