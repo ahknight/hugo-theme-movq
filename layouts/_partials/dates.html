@@ -1,4 +1,4 @@
-        <p><span class="meta-key">Published</span> <span class="meta-value">{{ .Date | time.Format (site.Params.dateFormats.published | default ":date_full") }}
+        <p><span class="meta-key">Published</span> <span class="meta-value">{{ .Date | time.Format (site.Params.dateFormats.published | default ":date_full") }}</span>
 
 {{/* Check if Lastmod is set and is at least 60 seconds after the publish Date */}}
 {{ if and .Lastmod (gt (sub .Lastmod.Unix .Date.Unix) 59) }}

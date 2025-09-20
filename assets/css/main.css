@@ -71,7 +71,7 @@ BODY > HEADER, BODY > FOOTER {
     margin: 0;
 }
 
-BODY > HEADER + ARTICLE {
+BODY > HEADER + MAIN {
     border-top: 1pt solid #ddd;
     padding-top: 2pc;
 }
@@ -79,8 +79,10 @@ BODY > HEADER + ARTICLE {
 BODY > FOOTER {
     font-size: 11pt;
     line-height: 1.4em;
+    background-color: #ddd;
 }
 BODY > FOOTER P {
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -112,12 +114,9 @@ ARTICLE HEADER H1 A:visited, BODY HEADER H1 A:visited {
 }
 
 ARTICLE {
-    margin-bottom: 1pc;
-}
-
-ARTICLE {
     font-weight: 400;
     padding-bottom:2pc;
+    margin-bottom: 1pc;
     text-indent: 1pc;
     text-align: left;
     line-height: 1.5em;
@@ -149,14 +148,11 @@ ARTICLE FOOTER {
 
 ARTICLE FOOTER P {
     margin: 0;
-}
-
-FOOTER P {
     display: flex;
     align-items: flex-start;
 }
 
-FOOTER .meta-key {
+ARTICLE FOOTER .meta-key {
     font-weight: 700;
     text-align: right;
     width: 70pt;
@@ -164,7 +160,7 @@ FOOTER .meta-key {
 /*     margin-right: 1em; */
 }
 
-FOOTER .meta-value {
+ARTICLE FOOTER .meta-value {
     font-weight: 300;
     flex: 1;
     text-indent: 0;
@@ -318,7 +314,6 @@ HR {
 
 .pager {
     padding: 0.5em;
-/*     background-color: #eee; */
     text-align: center;
 }
 .paginator {
@@ -326,7 +321,6 @@ HR {
 }
 .paginate-pages {
     padding: 2px 3px;
-/*     display: none; */
 }
 .paginate-first, .paginate-last {
     padding: 2px 6px;
