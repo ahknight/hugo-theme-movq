@@ -45,6 +45,7 @@ BODY > HEADER P {
     margin-top: 0.1em;
     margin-bottom: 0.1em;
 }
+
 @media only screen and (max-width: 550px) {
 BODY {
     padding: 0 1pc;
@@ -64,6 +65,47 @@ BODY > HEADER H2 {
 BODY > *, BODY > HEADER *, BODY > FOOTER * {
     max-width:650px;
     margin:0 auto 0 auto;
+}
+
+/* Microblog posts in main feed */
+BODY .micro-post-feed {
+    margin: 0;
+    border-left: 2pt solid #2892ee;
+    padding: 0 1pc 0 1pc;
+/*     line-height: 1.3em; */
+    text-indent: 0;
+}
+
+.micro-post-feed .micro-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.micro-post-feed .micro-meta TIME {
+    color: #2892ee;
+    font-weight: 600;
+}
+
+.micro-post-feed .micro-indicator {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.micro-post-feed .micro-indicator:hover {
+    opacity: 1;
+}
+
+.micro-post-feed .micro-body {
+    color: #444;
+}
+
+.micro-post-feed .micro-body p {
+    text-indent: 0;
+}
+
+.micro-post-feed .micro-body p:last-child {
+    margin-bottom: 0;
 }
 
 BODY > HEADER, BODY > FOOTER {

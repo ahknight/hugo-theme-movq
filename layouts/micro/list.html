@@ -1,0 +1,8 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ $paginator := .Paginate .RegularPages }}
+  {{ range $paginator.Pages }}
+    {{ partial "micro-summary.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}

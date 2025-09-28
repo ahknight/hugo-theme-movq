@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ $dateMachine := .Date | time.Format (site.Params.dateFormats.machine | default "2006-01-02T15:04:05-07:00") }}
+{{ $dateHuman := .Date | time.Format (site.Params.dateFormats.micro | default "Jan 2, 2006 15:04 pm") }}
+<article class="micro-post-feed" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="micro-meta">
+        <span class="micro-indicator">💭</span>
+        <time itemprop="datePublished" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </div>
+    <div class="micro-body" itemprop="articleBody">
+        {{ .Content }}
+        <link itemprop="url" href="{{ .Permalink }}">
+    </div>
+</article>
+{{ end }}
